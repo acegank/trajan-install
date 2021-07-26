@@ -67,7 +67,7 @@ if [ $real_addr == $local_addr ] ; then
 	systemctl restart nginx.service
 	#申请https证书
 	mkdir /usr/src/trojan-cert
-	curl https://get.acme.sh | sh
+	curl https://get.acme.sh | sh -s email=yiqiqi@gmail.com
 	~/.acme.sh/acme.sh  --issue  -d $your_domain  --webroot /usr/share/nginx/html/
     	~/.acme.sh/acme.sh  --installcert  -d  $your_domain   \
         --key-file   /usr/src/trojan-cert/private.key \
