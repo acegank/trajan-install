@@ -69,8 +69,7 @@ if [ $real_addr == $local_addr ] ; then
 	mkdir /usr/src/trojan-cert
 	curl https://get.acme.sh | sh -s email=yiqiqi@gmail.com
 	#~/.acme.sh/acme.sh  --issue  -d $your_domain --dns dns_cf --webroot /usr/share/nginx/html/
-	~/.acme.sh/acme.sh --set-default-ca --server letsencrypt
-	--webroot /usr/share/nginx/html/ \
+	~/.acme.sh/acme.sh --set-default-ca --server letsencrypt --webroot /usr/share/nginx/html/
     	~/.acme.sh/acme.sh  --installcert  -d  $your_domain   \
         --key-file   /usr/src/trojan-cert/private.key \
         --fullchain-file /usr/src/trojan-cert/fullchain.cer \
